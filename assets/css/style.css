@@ -1,0 +1,23 @@
+body {
+    background-color: #414141;
+    background-image: url("../our_incredible_world_new_world_map.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+#highScoreAndTimerRow {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    max-width: 960px;
+}
+
+#worldCapitalsTitle {
+    background-color: #ffffffdc;
+    float: left;
+}
+
+#contentBox {
+    background-color: #ffffffdc;
+    border: 3px dashed #7c7c7c;
+}

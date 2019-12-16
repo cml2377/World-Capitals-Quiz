@@ -70,7 +70,7 @@ var feedbackEl = $("#feedback");
 var getStartedBtn = $("#getStarted");
 
 //when I click on getStartedBtn, the page will shuffle the questions, then load each question 1 by 1 until all 10 are answered. 
-//It will also have a timer of 30 seconds for each question, and will alert, then load the next question.
+//It will also have a timer of 200 seconds TOTAL, for entire quiz, and will alert, then load the next question.
 
 getStartedBtn.click(function (event) {
     //this picks the first question of the questions array and puts it in the local variable, question1. 
@@ -86,3 +86,41 @@ getStartedBtn.click(function (event) {
     answerBtn4.text(question1choices[3]);
 
 });
+
+//shuffle the questions array
+var randoQuestion = shuffle(questions);
+
+//create timer
+var timer = {
+    time= 2000,
+
+}
+
+
+
+
+
+
+
+
+//when an answerBtn is clicked, it is either correct or false. If correct, feedback=Correct! and add 10 points to score. 
+
+
+
+//If incorrect, feedback=Wrong! subtract 10 points, pause for 1 second, and move to next question.
+
+
+//If timer runs out, feedback=Time's up!, pause for 1 second, and end the quiz. Calculate the final score (number of questions right *10 + time in seconds left).
+
+//Final Score === current score up in the corner. The container has a text area that holds your initials. Enter initals and hit enter.
+
+//High Scores container has an ordered list that orders the array of high scores by HIGH -> LOW
+
+/*
+localStorage.setItem('Score1', 'Score2');
+
+var cat = localStorage.getItem('myCat');
+
+localStorage.clear();
+
+*/
