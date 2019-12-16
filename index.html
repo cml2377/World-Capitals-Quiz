@@ -43,6 +43,7 @@
                 <div class="col-md-3">
 
                 </div>
+
                 <div class="col-md-6" id="contentBox">
                     <div id="welcome">
                         <h3>Welcome to my quiz on capitals of the world!</h3>
@@ -50,106 +51,20 @@
                         <p>There are 10 questions total, in random order. You get 30 seconds to answer each question! In
                             the end, you will have a score based on amount correct and time left. Input your initials to
                             keep track of your high score!</p>
+                        <button type="button" class="btn btn-primary" id="getStarted">Get Started</button>
                     </div>
 
-                    <div class="question" id="argentina">
-                        <h3>What is the capital of Argentina?</h3>
+
+                    <div class="question">
+                        <h3 id="questionTxt"></h3>
                         <br>
-                        <div class="btn-group-vertical" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary">Buenos Aires</button>
-                            <button type="button" class="btn btn-secondary">Córdoba</button>
-                            <button type="button" class="btn btn-secondary">Rosario</button>
-                            <button type="button" class="btn btn-secondary">San Juan</button>
-                        </div>
-                    </div>
-                    <div class="question" id="ukraine">
-                        <h3>What is the capital of Ukraine?</h3>
-                        <br>
-                        <div class="btn-group-vertical" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary">Kharkiv</button>
-                            <button type="button" class="btn btn-secondary">Kyiv</button>
-                            <button type="button" class="btn btn-secondary">Sevastopol</button>
-                            <button type="button" class="btn btn-secondary">Mykolayiv</button>
-                        </div>
-                    </div>
-                    <div class="question" id="vietnam">
-                        <h3>What is the capital of Vietnam?</h3>
-                        <br>
-                        <div class="btn-group-vertical" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary">Ho Chi Minh City</button>
-                            <button type="button" class="btn btn-secondary">Da Nang</button>
-                            <button type="button" class="btn btn-secondary">Hanoi</button>
-                            <button type="button" class="btn btn-secondary">Hoi An</button>
-                        </div>
-                    </div>
-                    <div class="question" id="canada">
-                        <h3>What is the capital of Canada?</h3>
-                        <br>
-                        <div class="btn-group-vertical" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary">Toronto</button>
-                            <button type="button" class="btn btn-secondary">Vancouver</button>
-                            <button type="button" class="btn btn-secondary">Montreal</button>
-                            <button type="button" class="btn btn-secondary">Ottawa</button>
-                        </div>
-                    </div>
-                    <div class="question" id="italy">
-                        <h3>What is the capital of Italy?</h3>
-                        <br>
-                        <div class="btn-group-vertical" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary">Rome</button>
-                            <button type="button" class="btn btn-secondary">Milan</button>
-                            <button type="button" class="btn btn-secondary">Naples</button>
-                            <button type="button" class="btn btn-secondary">Venice</button>
-                        </div>
-                    </div>
-                    <div class="question" id="india">
-                        <h3>What is the capital of India?</h3>
-                        <br>
-                        <div class="btn-group-vertical" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary">Mumbai</button>
-                            <button type="button" class="btn btn-secondary">New Delhi</button>
-                            <button type="button" class="btn btn-secondary">Bangalore</button>
-                            <button type="button" class="btn btn-secondary">Kolkata</button>
-                        </div>
-                    </div>
-                    <div class="question" id="egypt">
-                        <h3>What is the capital of Egypt?</h3>
-                        <br>
-                        <div class="btn-group-vertical" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary">Sharm El Sheikh</button>
-                            <button type="button" class="btn btn-secondary">Alexandria</button>
-                            <button type="button" class="btn btn-secondary">Cairo</button>
-                            <button type="button" class="btn btn-secondary">Tripoli</button>
-                        </div>
-                    </div>
-                    <div class="question" id="botswana">
-                        <h3>What is the capital of Botswana?</h3>
-                        <br>
-                        <div class="btn-group-vertical" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary">Maun</button>
-                            <button type="button" class="btn btn-secondary">Molepolole</button>
-                            <button type="button" class="btn btn-secondary">Francistown</button>
-                            <button type="button" class="btn btn-secondary">Gaborone</button>
-                        </div>
-                    </div>
-                    <div class="question" id="malaysia">
-                        <h3>What is the capital of Malaysia?</h3>
-                        <br>
-                        <div class="btn-group-vertical" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary">Kuala Lumpur</button>
-                            <button type="button" class="btn btn-secondary">Singapore</button>
-                            <button type="button" class="btn btn-secondary">Kuching</button>
-                            <button type="button" class="btn btn-secondary">Johor Bahru</button>
-                        </div>
-                    </div>
-                    <div class="question" id="finland">
-                        <h3>What is the capital of Finland?</h3>
-                        <br>
-                        <div class="btn-group-vertical" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary">Oslo</button>
-                            <button type="button" class="btn btn-secondary">Helsinki</button>
-                            <button type="button" class="btn btn-secondary">Stockholm</button>
-                            <button type="button" class="btn btn-secondary">Copenhagen</button>
+                        <button type="button" class="btn btn-secondary btn-block" id="choice1"></button>
+                        <button type="button" class="btn btn-secondary btn-block" id="choice2"></button>
+                        <button type="button" class="btn btn-secondary btn-block" id="choice3"></button>
+                        <button type="button" class="btn btn-secondary btn-block" id="choice4"></button>
+                        <hr>
+                        <div id="feedback">
+
                         </div>
                     </div>
 
@@ -168,7 +83,6 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="assets/javascript/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -178,6 +92,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/script.js"></script>
 </body>
 
 </html>
