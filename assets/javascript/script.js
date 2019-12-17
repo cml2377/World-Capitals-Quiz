@@ -108,6 +108,7 @@ $(document).ready(function () {
         questionBox.hide();
         endingScoreBox.hide();
         highScoresBox.show();
+        $("#highScoresList").empty();
         $.each(scores, function (index, value) {
             var initials = value[0];
             var score = value[1];
@@ -187,15 +188,25 @@ $(document).ready(function () {
     //Save key value pairs to local storage: Initials => Score
     //does not allow duplicate initials/score tho
     saveInitials.on("click", function (event) {
-        var multipleInitial = $("initials").value();
+        var multipleInitial = $("#initials").val();
         // multipleInitial and timer must be set in scores array
         scores.push([multipleInitial, timer]);
+        //sort the array first.
+        scores.sort(function (first, second) {
+            if (first[1] > second[1]) {
+                return -1;
+            } else if (first[1] < second[1]) {
+                return 1;
+            }
+            return 0;
+        });
         //this saves it to local storage.
         localStorage.setItem("scores", JSON.stringify(scores));
         showHighScores();
     });
 
     highScoresBtn.on("click", function () {
+        window.clearInterval(timerReference);
         showHighScores();
     });
 
