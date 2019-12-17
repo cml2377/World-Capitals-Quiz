@@ -17,14 +17,14 @@
     <div id="backgroundIMG">
         <div class="container" id="everythingInThisPage">
             <div class="row" id="highScoreAndTimerRow">
-                <div class="col-sm-2" id="currentScore">
-                    Current Score:
+                <div class="col-sm-2" id="highScoreList">
+                    View High Scores:
                 </div>
                 <div class="col-sm-8">
 
                 </div>
                 <div class="col-sm-2" id="timer">
-                    Timer:<textspan id="timerCountdown"></textspan> sec
+                    Timer: <span id="timerCountdown">200</span> sec
                 </div>
             </div>
 
@@ -45,13 +45,13 @@
                     </div>
 
 
-                    <div class="question">
+                    <div id="question">
                         <h3 id="questionTxt"></h3>
                         <br>
-                        <button type="button" class="btn btn-secondary btn-block" id="choice1"></button>
-                        <button type="button" class="btn btn-secondary btn-block" id="choice2"></button>
-                        <button type="button" class="btn btn-secondary btn-block" id="choice3"></button>
-                        <button type="button" class="btn btn-secondary btn-block" id="choice4"></button>
+                        <button type="button" class="btn answer btn-secondary btn-block" id="choice1"></button>
+                        <button type="button" class="btn answer btn-secondary btn-block" id="choice2"></button>
+                        <button type="button" class="btn answer btn-secondary btn-block" id="choice3"></button>
+                        <button type="button" class="btn answer btn-secondary btn-block" id="choice4"></button>
                         <hr>
                         <div id="feedback">
 
@@ -67,9 +67,9 @@
                     </div>
 
 
-                    <div id="endingScore">
-                        <h3>Ending Score:</h3>
-                        <p>Please enter your initials: <textspan id="initials"></textspan>
+                    <div id="endingScoreBox">
+                        <h3 id="endingScore"></h3>
+                        <p>Please enter your initials: <span id="initials"></span>
                         </p>
 
                     </div>
