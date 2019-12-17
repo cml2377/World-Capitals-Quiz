@@ -62,6 +62,7 @@ var questions = [
 ];
 
 $(document).ready(function () {
+    //allllllll of the variables that I may or may not need
     var welcomeBox = $("#welcome");
     var questionBox = $("#question");
     var endingScoreBox = $("#endingScoreBox");
@@ -82,6 +83,7 @@ $(document).ready(function () {
     var timerCountdownEl = $("#timerCountdown");
     var timerReference = undefined;
 
+    //initial settings of the divs
     welcomeBox.show();
     questionBox.hide();
     endingScoreBox.hide();
@@ -95,6 +97,7 @@ $(document).ready(function () {
         questions[j] = temp;
     }
 
+    //shows the endingScoreBox if you finish the quiz or when you click on High Scores button
     function showScore() {
         questionBox.hide();
         endingScoreBox.show();
@@ -167,6 +170,7 @@ $(document).ready(function () {
 
     function showNextQuestionOrScore() {
         currentQuestion++;
+        // when currentQuestion reaches 10/max number of questions
         if (currentQuestion == questions.length) {
             showScore();
         } else {
@@ -218,6 +222,7 @@ $(document).ready(function () {
         $("#highScoresList").empty();
     });
 
+    //start over button
     $("#startOver").on("click", function () {
         location.reload();
     });

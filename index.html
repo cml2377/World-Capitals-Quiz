@@ -17,16 +17,19 @@
     <div id="backgroundIMG">
         <div class="container" id="everythingInThisPage">
             <div class="row" id="highScoreAndTimerRow">
+                <!--col-md-3 helps center the bar to the center of the page-->
                 <div class="col-md-3">
 
                 </div>
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-sm">
+                            <!--High scores button that will stop the timer and let you view the scores-->
                             <button class="btn btn-primary" id="highScoreBtn">
                                 View High Scores
                             </button>
                         </div>
+                        <!--Timer text and the span that counts down time-->
                         <div class="col-sm text-right" id="boxTimer">
                             Timer:
                             <span id="timerCountdown">200</span> sec
@@ -42,8 +45,9 @@
                 <div class="col-md-3">
 
                 </div>
-
+                <!--Content boxes that show or hide depending on quiz.-->
                 <div class="col-md-6" id="contentBox">
+                    <!--Welcome box shows by default-->
                     <div id="welcome">
                         <h1>Welcome to my quiz on capitals of the world!</h1>
                         <hr>
@@ -54,7 +58,7 @@
                         <button type="button" class="btn btn-primary" id="getStarted">Get Started</button>
                     </div>
 
-
+                    <!--Question box populates from the questions array in javascript-->
                     <div id="question">
                         <h3 id="questionTxt"></h3>
                         <br>
@@ -63,11 +67,12 @@
                         <button type="button" class="btn answer btn-secondary btn-block" id="choice3"></button>
                         <button type="button" class="btn answer btn-secondary btn-block" id="choice4"></button>
                         <hr>
+                        <!--Feedback div populates depending on user answer choice-->
                         <div id="feedback">
                         </div>
                     </div>
 
-
+                    <!--Ending score box only shows up if you fully complete the quiz. You can enter initials here.-->
                     <div id="endingScoreBox">
                         <h3 id="endingScore"></h3>
                         <p>Please enter your initials: <input type="text" id="initials" maxlength="2">
@@ -75,12 +80,16 @@
                         <button type="button" class="btn btn-secondary btn-block" id="saveInitials">Save</button>
 
                     </div>
+
+                    <!--High scores box shows up if you click on button or enter your initials to log score into local storage-->
                     <div id="highScores">
                         <h3>High Scores</h3>
                         <ol id="highScoresList">
 
                         </ol>
+                        <!--button to clear local storage-->
                         <button id="clearScores">Clear High Scores</button>
+                        <!--button to restart the quiz-->
                         <button id="startOver">Start Over</button>
                     </div>
 
