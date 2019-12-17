@@ -217,4 +217,9 @@ $(document).ready(function () {
         //remove all of the list's children
         $("#highScoresList").empty();
     });
+
+    $("#startOver").on("click", function () {
+        location.reload();
+    });
+
 });
