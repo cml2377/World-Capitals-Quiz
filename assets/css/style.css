@@ -24,3 +24,7 @@ body {
 #welcome, #highScores {
     margin-bottom: 10px;
 }
+
+#initials {
+    text-transform: uppercase;
+}
