@@ -66,6 +66,7 @@ $(document).ready(function () {
     var questionBox = $("#question");
     var endingScoreBox = $("#endingScoreBox");
     var highScoresBox = $("#highScores");
+    var scores = JSON.parse(localStorage.getItem("scores") || "[]");
 
     var questionTxtEl = $("#questionTxt");
     var answerBtn1 = $("#choice1");
@@ -74,6 +75,7 @@ $(document).ready(function () {
     var answerBtn4 = $("#choice4");
     var feedbackEl = $("#feedback");
     var getStartedBtn = $("#getStarted");
+    var highScoresBtn = $("#highScoreBtn");
     var currentQuestion = 0;
     //create timer
     var timer = 200;
@@ -92,8 +94,31 @@ $(document).ready(function () {
         questions[i] = questions[j];
         questions[j] = temp;
     }
+
+    function showScore() {
+        questionBox.hide();
+        endingScoreBox.show();
+        $("#endingScore").text("Ending Score: " + timer);
+        window.clearInterval(timerReference);
+    }
+
+    //this will run when you click Save or click on the button for high scores.
+    function showHighScores() {
+        welcomeBox.hide();
+        questionBox.hide();
+        endingScoreBox.hide();
+        highScoresBox.show();
+        $.each(scores, function (index, value) {
+            var initials = value[0];
+            var score = value[1];
+            var eachScore = $("<li>");
+            eachScore.text(initials + "      " + score);
+            $("#highScoresList").append(eachScore);
+        });
+    }
+
     //when you click on getStarted, the welcomeBox hides, and first rando question shows.
-    getStartedBtn.click(function (event) {
+    getStartedBtn.click(function () {
         //hide various boxes and show question box.
         welcomeBox.hide();
         questionBox.show();
@@ -111,15 +136,16 @@ $(document).ready(function () {
         //start countdown
         timerReference = window.setInterval(function () {
             timer--;
-            if (timer < 0) {
-                //showScore();
+            if (timer == 0) {
+                //When timer hits 0, move immediately to score screen.
+                showScore();
             } else {
                 timerCountdownEl.text(timer);
             };
         }, 1000);
 
     });
-    //when an answerBtn is clicked, it is either correct or false. If correct, feedback=Correct!, pause for 1 second, and continue.
+    //when an answerBtn is clicked, it is either correct or false. If correct, feedback=Correct!, pause for 0.5 second, and continue.
     $(".answer").on("click", function (event) {
         event.preventDefault();
         var correctAnswer = questions[currentQuestion].answer;
@@ -131,21 +157,19 @@ $(document).ready(function () {
             feedbackEl.text("Wrong!").show();
             timer -= 10;
         }
-        //pause for 1 second, then go to next question.
+        //pause for 0.5 second, then go to next question.
         window.setTimeout(function () {
             //goes to next question
             showNextQuestionOrScore();
-        }, 1000);
+        }, 500);
     });
 
     function showNextQuestionOrScore() {
         currentQuestion++;
         if (currentQuestion == questions.length) {
-            questionBox.hide();
-            endingScoreBox.show();
-            $("#endingScore").text("Ending Score: " + timer);
-            window.clearInterval(timerReference);
+            showScore();
         } else {
+            feedbackEl.hide();
             var question1 = questions[currentQuestion];
             //this makes the h3 text, var question1's question value.
             questionTxtEl.text(question1.question);
@@ -159,18 +183,27 @@ $(document).ready(function () {
         }
     }
 
+    var saveInitials = $("#saveInitials");
+    //Save key value pairs to local storage: Initials => Score
+    //does not allow duplicate initials/score tho
+    saveInitials.on("click", function (event) {
+        var multipleInitial = $("initials").value();
+        // multipleInitial and timer must be set in scores array
+        scores.push([multipleInitial, timer]);
+        //this saves it to local storage.
+        localStorage.setItem("scores", JSON.stringify(scores));
+        showHighScores();
+    });
+
+    highScoresBtn.on("click", function () {
+        showHighScores();
+    });
+
+    //clears local storage
+    $("#clearScores").on("click", function () {
+        scores = [];
+        localStorage.setItem("scores", JSON.stringify(scores));
+        //remove all of the list's children
+        $("#highScoresList").empty();
+    });
 });
-
-
-//If timer runs out, feedback=Time's up!, pause for 1 second, and end the quiz. 
-
-//High Scores container has an ordered list that orders the array of high scores by HIGH -> LOW
-
-/*
-localStorage.setItem('Score1', 'Score2');
-
-var cat = localStorage.getItem('myCat');
-
-localStorage.clear();
-
-*/

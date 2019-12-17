@@ -18,7 +18,8 @@
         <div class="container" id="everythingInThisPage">
             <div class="row" id="highScoreAndTimerRow">
                 <div class="col-sm-2" id="highScoreList">
-                    View High Scores:
+                    <button class="btn" id="highScoreBtn"></button>
+                    View High Scores
                 </div>
                 <div class="col-sm-8">
 
@@ -69,16 +70,17 @@
 
                     <div id="endingScoreBox">
                         <h3 id="endingScore"></h3>
-                        <p>Please enter your initials: <span id="initials"></span>
+                        <p>Please enter your initials: <input type="text" id="initials">
                         </p>
+                        <button type="button" class="btn btn-secondary btn-block" id="saveInitials">Save</button>
 
                     </div>
                     <div id="highScores">
                         <h3>High Scores</h3>
-                        <ol>
+                        <ol id="highScoresList">
 
                         </ol>
-
+                        <button id="clearScores">Clear High Scores</button>
                     </div>
 
                 </div>
